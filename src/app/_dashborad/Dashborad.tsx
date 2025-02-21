@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import SideManu from "@/components/adminDashborad/sideber/SideManu";
-import TopMemuBer from "./../../components/adminDashborad/topber/TopMemuBer";
+import SideManu from "@/components/adminPanelNavBer/sideber/SideManu";
+import TopMemuBer from "../../components/adminPanelNavBer/topber/TopMemuBer";
 
-const Dashborad = () => {
+const Dashborad = ({children}:{children: React.ReactNode}) => {
 
     const [showSideBer, setShowSideBer ] = React.useState<boolean>(false)
 
@@ -29,7 +29,9 @@ const Dashborad = () => {
         {/* main container section */}
         <div className=" w-full h-screen overflow-y-scroll overflow-hidden p-2 pl-0 pt-0 ">
           {/* <div className=" w-full "> */}
-            <div className=" w-full h-[1200px] mt-16 bg-gray-300/50 dark:bg-[#071739] rounded-lg p-6 ">sdh</div>
+            <div className=" w-full min-h-[calc(100%-68px)] mt-16 bg-gray-300/50 dark:bg-[#071739] rounded-lg p-6 ">
+            {children}
+            </div>
           {/* </div> */}
         </div>
       </div>

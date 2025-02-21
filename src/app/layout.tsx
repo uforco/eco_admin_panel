@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.scss";
 import ThemeWiper from "@/components/themeMode/ThemeWiper";
+import dynamic from "next/dynamic";
+// import Dashborad from "./_dashborad/Dashborad";
+const Dashborad = dynamic(() => import("./_dashborad/Dashborad"), { ssr: true })
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  dark:bg-[#112143] `}
-      >
-        <ThemeWiper>{children}</ThemeWiper>
+      <body>
+        <ThemeWiper>
+          <Dashborad>{children}</Dashborad>
+          {/* {children} */}
+        </ThemeWiper>
       </body>
     </html>
   );

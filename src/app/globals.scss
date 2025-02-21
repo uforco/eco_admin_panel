@@ -88,3 +88,14 @@ body {
 .btnbg {
   @apply bg-slate-100 hover:bg-blue-400/20 text-gray-600 hover:text-blue-700 bg-blue-500/10  dark:bg-blue-500/10 dark:hover:bg-blue-500/20 dark:text-gray-300 dark:hover:text-blue-500
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
