@@ -1,0 +1,29 @@
+.reportSection {
+  .lineChart {
+    @apply border-green-600 w-full lg:w-8/12 min-h-96 ;
+  }
+  .CircelCharts {
+    .topOptionbtn{
+        span{
+            @apply dark:text-white text-lg font-semibold tracking-wider capitalize
+        }
+    }
+    .textDetails {
+      .detailsCard {
+        .iconStyle {
+          @apply flex justify-center items-center rounded-full  overflow-hidden p-[3px] w-6 h-6 text-[#e8eaed] dark:text-[#071739];
+        }
+        .stuteTitle {
+          @apply text-gray-700 font-medium tracking-wide dark:text-gray-400;
+        }
+        .dataStatus {
+          @apply font-medium tracking-wide text-gray-700 dark:text-gray-400;
+        }
+        @apply border-t border-gray-300 dark:border-gray-800 flex w-full  justify-between items-center py-3 mb-1  ;
+      }
+      @apply mt-4
+    }
+    @apply  w-full lg:w-4/12 p-4 pb-2 rounded-lg overflow-hidden bg-gray-100 dark:bg-[#091c46] shadow-sm ;
+  }
+  @apply border-red-400 w-full flex flex-col lg:flex-row gap-5 ;
+}

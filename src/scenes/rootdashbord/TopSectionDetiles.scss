@@ -3,9 +3,9 @@
 }
 
 @mixin TrendinglogoSytle {
-  font-size: 140px;
+  font-size: 140px ;
   color: rgb(190, 14, 225);
-  @apply absolute -bottom-4 left-0  text-black/10;
+  @apply absolute -bottom-4 left-0  text-black/10 -z-0;
 }
 
 @mixin totalTextstyle {
@@ -19,24 +19,25 @@
 }
 
 .ditelCard {
+  
   .cardwiper {
-    .cardmincontaine{
-        .monthsection{
-            div{
-                span{
-                    @apply text-lg font-medium capitalize tracking-wider
-                }
-                p{
-                    @apply text-xs p-[3px] px-[5px] rounded font-medium bg-black/70
-                }
-                @apply flex justify-between items-center gap-2
-                
-            }
-
-            @apply flex justify-between items-center 
+    .cardmincontaine {
+      .monthsection {
+        div {
+          span {
+            @apply text-base font-medium capitalize tracking-wider;
+          }
+          p {
+            @apply text-xs p-[3px] px-[5px] rounded font-medium bg-black/40;
+          }
+          @apply flex justify-between items-center gap-2;
         }
-
-        @apply flex flex-col justify-between gap-6
+        button{
+          @apply text-black/70 cursor-pointer
+        }
+        @apply flex justify-between items-center z-30 ;
+      }
+      @apply flex flex-col justify-between gap-6 p-4  ;
     }
     .usercardscss {
       @include cardgradient(#05a941, #2ad96a);
@@ -70,9 +71,22 @@
       @include TrendinglogoSytle;
     }
     .cardRightIcon {
-      @apply w-11 h-11 rounded-lg overflow-hidden flex justify-center items-center text-3xl;
+      @apply w-11 h-11 rounded-lg overflow-hidden flex justify-center items-center ;
     }
+
+    .totalSalesLineBer{
+      .x-axis-tick{
+        // @apply fill-red-500
+        fill: #FF5733; /* Fixed color */
+      font-size: 14px;
+      font-weight: bold;
+      }
+    }
+
+
     @include totalTextstyle;
     @apply col-span-2 row-span-4 relative rounded-lg overflow-hidden;
   }
 }
+
+

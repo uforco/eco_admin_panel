@@ -16,7 +16,7 @@ const Dashborad = ({children}:{children: React.ReactNode}) => {
     <div className=" relative bg-white dark:bg-[#182a50] ">
       {/* Top Menu Ber section */}
       <div className=" w-full h-16 pr-[18px] absolute top-0 left-0 z-50 ">
-        <TopMemuBer onoffsideber={onoffsideber} showSideBer={showSideBer} className=" w-full h-full bg-slate-100/50 dark:bg-[#182a50]/50  backdrop-blur-sm " ></TopMemuBer>
+        <TopMemuBer onoffsideber={onoffsideber} showSideBer={showSideBer} className=" w-full h-full bg-slate-100/70 dark:bg-[#182a50]/70  backdrop-blur-md " ></TopMemuBer>
       </div>
 
       <div className=" flex overflow-hidden pl-2 w-full ">
