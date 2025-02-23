@@ -35,7 +35,6 @@ export default function TotalSelesChartComponent() {
       <div className="  min-w-56 w-full h-full overflow-hidden flex flex-col justify-between py-1 totalSalesLineBer  ">
         <TopDetilsSection></TopDetilsSection>
 
-        {/* <div className=" TotalselesCard p-5 m-5 h-full border  border-red-500 "> */}
           <ChartContainer config={chartConfig} className=" salesCharts " >
             <AreaChart
               accessibilityLayer
@@ -89,7 +88,6 @@ export default function TotalSelesChartComponent() {
               />
             </AreaChart>
           </ChartContainer>
-        {/* </div> */}
       </div>
     </HydrationComponent>
   );
