@@ -1,0 +1,85 @@
+.reportSection {
+  .lineChart {
+    .seletorYear {
+      .yearSeleteBtn {
+        @apply focus:ring-offset-0 border ring-offset-0 w-[200px] text-gray-600 dark:text-gray-500 bg-gray-100 dark:bg-[#071739] border-gray-200 dark:border-[#0d265d] text-sm;
+        div {
+          @apply mr-10;
+        }
+        .calendarIcon {
+          @apply w-4 mr-2;
+        }
+      }
+      // .selectContent{
+      //   @apply p-10;
+      //   &[data-state="open"] {
+      //     background-color: #1e293b; // Dark Blue
+      //     color: white;
+      //     border-radius: 8px;
+      //     border: 1px solid #334155;
+      //   }
+      // }
+    }
+
+    .blockCard {
+      @apply flex flex-col lg:flex-row lg:justify-between px-3 gap-2  my-4;
+      .iconStyle {
+        @apply font-bold text-3xl;
+      }
+      .titleData {
+        @apply capitalize text-xl font-semibold text-gray-700 dark:text-gray-300;
+      }
+      .title {
+        @apply capitalize text-xs text-gray-600 dark:text-gray-500;
+      }
+    }
+    .lineChartBer {
+      .recharts-cartesian-grid-horizontal,
+      .recharts-cartesian-grid-vertical {
+        line {
+          @apply stroke-slate-800 dark:stroke-slate-500;
+        }
+      }
+      // @apply hidden
+    }
+    // .lineChartBer{
+    //   @apply w-auto h-auto block  rounded-lg shadow border  2xl:flex justify-center items-end
+    // }
+    .lineChartBer{
+      @apply flex w-full sm:h-[440px];
+      .controlCharts{
+        display: flex !important;
+        width: 100% !important;
+      }
+    }
+    @apply border-green-600 w-full lg:w-8/12 min-h-96 flex flex-col justify-between p-2 md:p-4 rounded-lg overflow-hidden bg-gray-100 dark:bg-[#091c46] shadow-sm mb-5 lg:m-0;
+  }
+  // orders overview
+  .CircelCharts {
+    .textDetails {
+      .detailsCard {
+        .iconStyle {
+          @apply flex justify-center items-center rounded-full  overflow-hidden p-[5px] w-7 h-7 2xl:w-8 2xl:h-8 text-[#e8eaed] dark:text-[#071739];
+        }
+        .stuteTitle {
+          @apply text-gray-700 font-medium tracking-wide dark:text-gray-400 text-xl ml-2 capitalize;
+        }
+        .dataStatus {
+          @apply font-medium tracking-wide text-gray-700 dark:text-gray-400 text-xl;
+        }
+        @apply border-t border-gray-300 dark:border-gray-800 flex w-full  justify-between items-center py-2 mb-1;
+      }
+      @apply mt-4;
+    }
+
+    @apply w-full lg:w-4/12 p-4 pb-2 rounded-lg overflow-hidden bg-gray-100 dark:bg-[#091c46] shadow-sm;
+  }
+
+  .topOptionbtn {
+    .titelSection {
+      @apply dark:text-gray-200 text-lg font-semibold tracking-wider capitalize text-gray-700;
+    }
+  }
+
+  @apply border-red-400 w-full block lg:flex  gap-5 h-full lg:h-[575px] 2xl:h-[600px];
+}

@@ -9,7 +9,7 @@ interface Props {
   }[];
 }
 
-function TextDetails(props: Props) {
+function TopDetailsBer(props: Props) {
   const { chartData } = props;
 
   if(!chartData) return <p>data pass problem {'(TextDetails)'} ! Not data found </p>
@@ -29,7 +29,7 @@ function TextDetails(props: Props) {
   );
 }
 
-export default TextDetails;
+export default TopDetailsBer;
 
 const IconReturn = ({ typedata }: { typedata: string }) => {
   const CoverIcon = ({

@@ -29,7 +29,7 @@ const Dashborad = ({children}:{children: React.ReactNode}) => {
         {/* main container section */}
         <div className=" w-full h-screen overflow-y-scroll overflow-hidden p-2 pl-0 pt-0 ">
           {/* <div className=" w-full "> */}
-            <div className=" w-full min-h-[calc(100%-68px)] mt-16 bg-gray-300/50 dark:bg-[#071739] rounded-lg p-6 ">
+            <div className=" w-full min-h-[calc(100%-68px)] mt-16 bg-gray-300/50 dark:bg-[#071739] rounded-lg p-6 overflow-hidden  ">
             {children}
             </div>
           {/* </div> */}

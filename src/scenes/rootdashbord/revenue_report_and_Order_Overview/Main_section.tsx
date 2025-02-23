@@ -1,12 +1,13 @@
 import React from 'react';
-import CircelCharts from './CircelCharts/CircelCharts';
-import './revenue_report.scss'
+import CircelCharts from './ordersOverviewPeiCharts/CircelCharts';
+import './revenue_report_orders_overview.scss'
+import RevenueReport from './revenueReport_AreaCharts/RevenueReport';
 
 const Main_section = () => {
     return (
         <div className=' reportSection  ' >
             {/* <CircelCharts></CircelCharts> */}
-            <div className=' border  lineChart   ' ></div>
+            <RevenueReport></RevenueReport>
             <CircelCharts></CircelCharts>
         </div>
     );

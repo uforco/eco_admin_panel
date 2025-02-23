@@ -12,12 +12,12 @@ import HydrationComponent from "@/components/HydrationComponent";
 import TopDetilsSection from "./TopDetilsSection";
 
 const chartData = [
-  { month: "January", desktop: 186, desktop2: 332 },
-  { month: "February", desktop: 305, desktop2: 132 },
-  { month: "March", desktop: 237, desktop2: 52 },
-  { month: "April", desktop: 73, desktop2: 550 },
-  { month: "May", desktop: 209, desktop2: 30 },
-  { month: "June", desktop: 214, desktop2: 552 },
+  { month: "January", desktop: 30, desktop2: 332 },
+  { month: "February", desktop: 20, desktop2: 132 },
+  { month: "March", desktop: 30, desktop2: 52 },
+  { month: "April", desktop: 30, desktop2: 550 },
+  { month: "May", desktop: 40, desktop2: 30 },
+  { month: "June", desktop: 10, desktop2: 752 },
 ];
 
 const chartConfig = {
@@ -36,7 +36,7 @@ export default function TotalSelesChartComponent() {
         <TopDetilsSection></TopDetilsSection>
 
         {/* <div className=" TotalselesCard p-5 m-5 h-full border  border-red-500 "> */}
-          <ChartContainer config={chartConfig}>
+          <ChartContainer config={chartConfig} className=" salesCharts " >
             <AreaChart
               accessibilityLayer
               data={chartData}
@@ -67,7 +67,7 @@ export default function TotalSelesChartComponent() {
               />
               <defs>
                 <linearGradient id="colorDesktop2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#215DD1" stopOpacity={0.8} />
+                  <stop offset="30%" stopColor="#165fff" stopOpacity={0.7} />
                   <stop offset="100%" stopColor="#215DD1" stopOpacity={0} />
                 </linearGradient>
                 <filter id="glow">

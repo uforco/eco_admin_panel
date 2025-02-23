@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import TextDetails from "./TextDetails";
+import TextDetails from "./TopDetailsBer";
 // import { TrendingUp } from "lucide-react";
 import { Pie, PieChart } from "recharts";
 
@@ -52,7 +52,7 @@ function CircelCharts() {
   return (
     <div className=" CircelCharts ">
       <div className=" flex  justify-between items-center topOptionbtn ">
-        <span>
+        <span className="titelSection" >
           orders overview
         </span>
         <button className=" rounded-full w-10 h-10 bg-transparent cursor-pointer ">
