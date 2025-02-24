@@ -1,0 +1,36 @@
+.addBtn {
+  @apply gap-2 font-light w-[144px] h-11 justify-between px-3 rounded-lg text-gray-200 bg-[#605BFF];
+}
+.shadowFixdiv {
+  @apply z-[100];
+}
+.drawerManu {
+  @apply right-0 bottom-0 top-0;
+}
+
+.primaryImage {
+  @apply border w-36 h-36 rounded-full overflow-hidden mt-5  relative;
+
+  .imagecontainer {
+    @apply z-10 p-2 absolute top-0 left-0 scale-[1.15] w-full h-full;
+  }
+
+  .uploadContainer {
+    @apply  absolute bottom-0  transition-all duration-300 w-full h-full z-50 bg-gray-300/60 ;
+    .mergeUploadIcon {
+        @apply relative w-full h-full z-50 ;
+      .uploadImg {
+        @apply absolute bottom-0 z-50 left-0 right-0 w-[150px] h-full hidden ;
+      }
+      .uploadicon {
+        @apply w-full cursor-pointer z-50 text-5xl absolute bottom-0 left-0 right-0 h-full  flex justify-center items-center  text-[#182a50] ;
+      }
+    }
+  }
+  
+//     &:hover{
+//         .hoverEfftOnImage{
+//         @apply bottom-[45px]
+//     }
+//   }
+}

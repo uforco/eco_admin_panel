@@ -20,6 +20,12 @@ body {
   background: none !important;
 }
 
+
+.boxBgColor {
+  @apply bg-gray-100 dark:bg-[#091C46] rounded-lg overflow-hidden
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

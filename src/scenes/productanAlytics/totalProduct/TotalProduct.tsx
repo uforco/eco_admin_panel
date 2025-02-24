@@ -44,7 +44,7 @@ const TotalProduct = (props: Props) => {
 
   return (
     <div className="  totalCardLineChartsSection  ">
-      <div className="  topInfo " >
+      <div className="  topInfo w-full " >
         <div className=" leftside " >
             <p className=" icon productIcon " ><HiGiftTop></HiGiftTop></p>
             <div>
@@ -56,7 +56,7 @@ const TotalProduct = (props: Props) => {
       </div>
 
 
-      <div className="  ">
+      <div className=" w-full  ">
         <ChartContainer config={chartConfig} className=" ChartContainer ">
           <AreaChart
             accessibilityLayer

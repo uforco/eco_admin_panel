@@ -6,11 +6,13 @@ import { MdMenu, MdMenuOpen } from "react-icons/md";
 interface Props {
   className: string;
   showSideBer: boolean;
-  onoffsideber: () => void
+  drawerOpen: boolean;
+  onoffsideber: () => void;
+  drawer:() => void
 }
 
 function TopMemuBer(props: Props) {
-  const { className: classname, showSideBer, onoffsideber } = props;
+  const { className: classname, showSideBer, onoffsideber, drawer, drawerOpen } = props;
 
   return (
     <div
@@ -21,8 +23,11 @@ function TopMemuBer(props: Props) {
       </div>
       <div className=" flex items-center w-full justify-between  ">
         <div>
-          <button onClick={onoffsideber} className=" btnbg text-2xl flex justify-center items-center w-10 h-10 rounded-full  transition-all duration-500 overflow-hidden ">
+          <button onClick={onoffsideber} className=" hidden 2xl:flex btnbg text-2xl  justify-center items-center w-10 h-10 rounded-full  transition-all duration-500 overflow-hidden ">
             {!showSideBer ? <MdMenuOpen></MdMenuOpen> : <MdMenu></MdMenu>}
+          </button>
+          <button onClick={drawer} className=" flex 2xl:hidden btnbg text-2xl  justify-center items-center w-10 h-10 rounded-full  transition-all duration-500 overflow-hidden ">
+            {!drawerOpen ? <MdMenuOpen></MdMenuOpen> : <MdMenu></MdMenu>}
           </button>
         </div>
         <div>

@@ -1,5 +1,6 @@
 .totalCardLineChartsSection {
-  @apply shadow-lg shadow-gray-400/10 dark:shadow-[#182A50]/10 border border-gray-300/20 dark:border-[#182A50] w-[365px] h-[182px] rounded-lg overflow-hidden bg-gray-100 dark:bg-[#182A50];
+  min-width: 365px !important ;
+  @apply shadow-lg shadow-gray-400/10 dark:shadow-[#182A50]/10 border border-gray-200/70 dark:border-[#182A50] w-full h-[182px] rounded-lg overflow-hidden bg-gray-100 dark:bg-[#182A50]  ;
 
   .topInfo {
     @apply flex justify-between px-4 pt-3;
@@ -22,7 +23,7 @@
       }
     }
     .rightside {
-      @apply text-sm text-green-600;
+      @apply text-xs text-green-600;
     }
   }
 

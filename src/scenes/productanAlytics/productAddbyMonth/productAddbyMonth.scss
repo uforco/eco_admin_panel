@@ -1,0 +1,6 @@
+.productAddbyMonth{
+    @apply p-4 rounded-lg overflow-hidden py-5;
+    .titleName{
+        @apply mb-3 capitalize tracking-wider
+    }
+}

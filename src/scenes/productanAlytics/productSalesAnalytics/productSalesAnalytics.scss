@@ -1,0 +1,10 @@
+.productSalesAnalytics{
+    .redioChartCard{
+        .middIncon{
+            @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-4xl text-[#5B93FF] bg-[#5B93FF]/10 rounded-full p-3; 
+        }
+    }
+    .topOptionbtn{
+        @apply px-5 py-2 tracking-wider
+    }
+}

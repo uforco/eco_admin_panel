@@ -42,8 +42,8 @@ const invoices = [
 
 const TopSellingProducts = () => {
   return (
-    <div className=" topSellingsection  ">
-      <div className=" flex justify-between ">
+    <div className=" topSellingsection boxBgColor ">
+      <div className=" flex justify-between titlesection ">
         <p>Top Selling Products</p>
         <Link href={""}>See More</Link>
       </div>
