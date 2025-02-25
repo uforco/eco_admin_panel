@@ -1,16 +1,46 @@
+"use client";
 import React from "react";
+import PrimaryInfo from "./primaryInfo/Primary";
 import "../addproduct.scss";
-import PrimryImage from "./primryImage/PrimryImage";
+import AdditionalInfo from "./AdditionalInfo/AdditionalInfo";
+import PriceSection from "./priceSection/PriceSection";
 
 const ProductContainer = () => {
+  const [swit, setSwit] = React.useState("PrimaryInfo");
+
+  const typeContaine = ["PrimaryInfo", "PriceSection", "AdditionalInfo"];
+  let containe: React.ReactNode = <PrimaryInfo></PrimaryInfo>;
+  if(swit === typeContaine[0]){ containe = <PrimaryInfo></PrimaryInfo>}
+  if(swit === typeContaine[1]){ containe = <PriceSection></PriceSection>}
+  if(swit === typeContaine[2]) {containe = <AdditionalInfo></AdditionalInfo>}
+
+  const formHeandelar = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }
+
   return (
-    <div className=" pt-5 ">
-      <div className=" flex justify-center items-center w-full font-semibold ">
-        Add a New Product
+    <div className=" h-full addFromStyle " >
+        <div className=" inpurFill flex justify-between ">
+          <button onClick={()=> setSwit(typeContaine[0])} className={` border-b fromSwit px-5 py-1 text-sm w-full  ${swit === typeContaine[0]? "activeFormBtn":"fromSwit"} `}>
+            Primary
+          </button>
+          <button onClick={()=> setSwit(typeContaine[1])} className={` border-b fromSwit px-5 py-1 text-sm w-full  ${swit === typeContaine[1]? "activeFormBtn":"fromSwit"} `}>
+          Price
+          </button>
+          <button onClick={()=> setSwit(typeContaine[2])} className={` border-b fromSwit px-5 py-1 text-sm w-full  ${swit === typeContaine[2]? "activeFormBtn":"fromSwit"} `}>
+            Additional
+          </button>
+        </div>
+
+      <div className=" h-full overflow-y-scroll no-srcolber containeScrollber w-full ">
+        <div className=" pt-5 overflow-hidden p-4 w-full  ">
+          <form className=" w-full h-full productFrom " onSubmit={formHeandelar} action="">
+            {containe}
+          </form>
+        </div>
       </div>
-      <div className=" flex justify-center " >
-        <PrimryImage></PrimryImage>
-      </div>
+
+      
     </div>
   );
 };

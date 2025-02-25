@@ -1,11 +1,11 @@
 .addBtn {
-  @apply gap-2 font-light w-[144px] h-11 justify-between px-3 rounded-lg text-gray-200 bg-[#605BFF];
+  @apply gap-2 font-light text-sm w-[130px] h-8 justify-between px-3 rounded-lg text-gray-200 bg-[#605BFF];
 }
 .shadowFixdiv {
   @apply z-[100];
 }
 .drawerManu {
-  @apply right-0 bottom-0 top-0;
+  @apply right-0 bottom-0 top-0 w-11/12 xl:w-96;
 }
 
 .primaryImage {
@@ -16,21 +16,62 @@
   }
 
   .uploadContainer {
-    @apply  absolute bottom-0  transition-all duration-300 w-full h-full z-50 bg-gray-300/60 ;
+    @apply absolute bottom-0  transition-all duration-300 w-full h-full z-50 bg-gray-300/60;
     .mergeUploadIcon {
-        @apply relative w-full h-full z-50 ;
+      @apply relative w-full h-full z-50;
       .uploadImg {
-        @apply absolute bottom-0 z-50 left-0 right-0 w-[150px] h-full hidden ;
+        @apply absolute bottom-0 z-50 left-0 right-0 w-[150px] h-full hidden;
       }
       .uploadicon {
-        @apply w-full cursor-pointer z-50 text-5xl absolute bottom-0 left-0 right-0 h-full  flex justify-center items-center  text-[#182a50] ;
+        @apply w-full cursor-pointer z-50 text-5xl absolute bottom-0 left-0 right-0 h-full  flex justify-center items-center  text-[#182a50];
       }
     }
   }
-  
-//     &:hover{
-//         .hoverEfftOnImage{
-//         @apply bottom-[45px]
-//     }
-//   }
+}
+
+.addProductDescription {
+  @apply w-full;
+}
+
+.addFromStyle {
+  @apply w-full;
+  .productFrom {
+    @apply pb-[45px];
+  }
+
+  .inpurFill {
+    label {
+      @apply text-sm font-semibold text-gray-600 dark:text-gray-400 capitalize;
+    }
+    input {
+      @apply bg-gray-400/50 dark:bg-[#071739] dark:text-gray-300 mt-1 text-sm font-normal tracking-wider rounded-sm h-10 focus:outline-none placeholder:px-2 px-2;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .fromSwit {
+      @apply border-b-[3px] transition-all duration-500 dark:border-gray-700 border-gray-300 dark:hover:border-green-600 hover:border-green-600 tracking-wider;
+    }
+    .activeFormBtn {
+      @apply border-b-[3px] border-green-600 dark:border-green-600 text-green-600;
+    }
+    textarea{
+      @apply bg-gray-400/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none overflow-y-auto p-2 focus:outline-none mt-1 ;
+    }
+    .seletedsection{
+      @apply bg-gray-400/50 text-gray-900 rounded-md block  mt-1  dark:bg-[#071739]  dark:text-gray-400 focus:outline-none p-3 w-full; 
+    }
+  }
+
+  .bercodeContainer {
+    @apply gap-4 flex justify-between items-center mt-3;
+    svg {
+      @apply w-full;
+    }
+    button {
+      @apply text-sm rounded px-4 capitalize w-full h-9 bg-gray-400/50 dark:bg-[#071739] dark:text-gray-300 inline-flex items-center justify-center font-medium transition active:scale-110;
+    }
+  }
 }
