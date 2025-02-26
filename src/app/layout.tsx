@@ -31,7 +31,6 @@ export default function RootLayout({
       <body>
         <ThemeWiper>
           <Dashborad>{children}</Dashborad>
-          {/* {children} */}
         </ThemeWiper>
       </body>
     </html>

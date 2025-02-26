@@ -4,8 +4,8 @@
 .shadowFixdiv {
   @apply z-[100];
 }
-.drawerManu {
-  @apply right-0 bottom-0 top-0 w-11/12 xl:w-96;
+.addProductdrawer {
+  @apply right-0 bottom-0 top-0 w-11/12 xl:w-[450px];
 }
 
 .primaryImage {
@@ -59,6 +59,9 @@
     }
     textarea{
       @apply bg-gray-400/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none overflow-y-auto p-2 focus:outline-none mt-1 ;
+    }
+    .textareaEditor{
+      @apply bg-gray-200/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none
     }
     .seletedsection{
       @apply bg-gray-400/50 text-gray-900 rounded-md block  mt-1  dark:bg-[#071739]  dark:text-gray-400 focus:outline-none p-3 w-full; 

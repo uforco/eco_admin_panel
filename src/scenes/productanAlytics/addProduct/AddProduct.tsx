@@ -26,7 +26,7 @@ const AddProduct = () => {
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 shadowFixdiv  bg-black/80" />
           <Drawer.Content
-            className="right-0-0 top-0 bottom-0 fixed z-[200] outline-none  flex drawerManu"
+            className="right-0-0 top-0 bottom-0 fixed z-[200] outline-none  flex drawerManu addProductdrawer"
             // The gap between the edge of the screen and the drawer is 8px in this case.
             style={
               {
