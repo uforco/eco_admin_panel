@@ -1,10 +1,13 @@
+import ReduxProvider from "@/redux/ReduxProvider";
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import ThemeWiper from "@/components/themeMode/ThemeWiper";
 import dynamic from "next/dynamic";
 // import Dashborad from "./_dashborad/Dashborad";
-const Dashborad = dynamic(() => import("./_dashborad/Dashborad"), { ssr: true })
+const Dashborad = dynamic(() => import("./_dashborad/Dashborad"), {
+  ssr: true,
+});
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -27,12 +30,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <ThemeWiper>
-          <Dashborad>{children}</Dashborad>
-        </ThemeWiper>
-      </body>
-    </html>
+    <ReduxProvider>
+      <html lang="en">
+        <body>
+          <ReduxProvider>
+            <ThemeWiper>
+              <Dashborad>{children}</Dashborad>
+            </ThemeWiper>
+          </ReduxProvider>
+        </body>
+      </html>
+    </ReduxProvider>
   );
 }
