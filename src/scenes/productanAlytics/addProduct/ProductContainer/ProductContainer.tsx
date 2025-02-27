@@ -4,8 +4,14 @@ import PrimaryInfo from "./primaryInfo/Primary";
 import "../addproduct.scss";
 import AdditionalInfo from "./AdditionalInfo/AdditionalInfo";
 import PriceSection from "./priceSection/PriceSection";
+import { useAppDispatch } from "@/redux/app/hooks";
+import { increment } from "@/redux/features/addProduct/addProductSlice";
 
 const ProductContainer = () => {
+
+  const dispatch = useAppDispatch()
+
+
   const [swit, setSwit] = React.useState("PrimaryInfo");
 
   const typeContaine = ["PrimaryInfo", "PriceSection", "AdditionalInfo"];
@@ -16,7 +22,18 @@ const ProductContainer = () => {
 
   const formHeandelar = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    console.log("dispatch")
+
+    dispatch(increment())
+
+
   }
+
+
+
+
+
 
   return (
     <div className=" h-full addFromStyle " >
