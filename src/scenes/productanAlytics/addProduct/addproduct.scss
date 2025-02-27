@@ -8,23 +8,15 @@
   @apply right-0 bottom-0 top-0 w-11/12 xl:w-[450px];
 }
 
-.primaryImage {
-  @apply border w-36 h-36 rounded-full overflow-hidden mt-5  relative;
-
-  .imagecontainer {
-    @apply z-10 p-2 absolute top-0 left-0 scale-[1.15] w-full h-full;
-  }
-
-  .uploadContainer {
-    @apply absolute bottom-0  transition-all duration-300 w-full h-full z-50 bg-gray-300/60;
-    .mergeUploadIcon {
-      @apply relative w-full h-full z-50;
-      .uploadImg {
-        @apply absolute bottom-0 z-50 left-0 right-0 w-[150px] h-full hidden;
-      }
-      .uploadicon {
-        @apply w-full cursor-pointer z-50 text-5xl absolute bottom-0 left-0 right-0 h-full  flex justify-center items-center  text-[#182a50];
-      }
+.ProductSaveBtn {
+  @apply my-10 flex justify-end items-center;
+  button {
+    @apply border active:scale-[0.97] capitalize flex justify-center items-center w-full h-14 text-white gap-2 rounded-lg bg-[#605BFF];
+    span {
+      @apply tracking-widest;
+    }
+    p {
+      @apply text-2xl -mt-1;
     }
   }
 }
@@ -57,14 +49,14 @@
     .activeFormBtn {
       @apply border-b-[3px] border-green-600 dark:border-green-600 text-green-600;
     }
-    textarea{
-      @apply bg-gray-400/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none overflow-y-auto p-2 focus:outline-none mt-1 ;
+    textarea {
+      @apply bg-gray-400/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none overflow-y-auto p-2 focus:outline-none mt-1;
     }
-    .textareaEditor{
-      @apply bg-gray-200/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none
+    .textareaEditor {
+      @apply bg-gray-200/50 text-gray-900 dark:bg-[#071739]  dark:text-gray-400 rounded-md resize-none;
     }
-    .seletedsection{
-      @apply bg-gray-400/50 text-gray-900 rounded-md block  mt-1  dark:bg-[#071739]  dark:text-gray-400 focus:outline-none p-3 w-full; 
+    .seletedsection {
+      @apply bg-gray-400/50 text-gray-900 rounded-md block  mt-1  dark:bg-[#071739]  dark:text-gray-400 focus:outline-none p-3 w-full;
     }
   }
 

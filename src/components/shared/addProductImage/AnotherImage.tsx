@@ -1,12 +1,21 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { IoCamera } from "react-icons/io5";
+import { IoCamera, IoClose } from "react-icons/io5";
 import HydrationComponent from "@/components/HydrationComponent";
 
-const PrimryImage = () => {
+
+interface Props {
+    imageCounter: number | string;
+}
+
+const AnotherImage = (props: Props) => {
+
+    const {imageCounter} = props;
+
   const [image, setimage] = React.useState<string>("");
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -19,7 +28,7 @@ const PrimryImage = () => {
 
   return (
     <HydrationComponent>
-      <div className=" primaryImage  ">
+      <div className=" anotherImages  ">
         <div className="imagecontainer">
           {image && (
             <Image
@@ -32,22 +41,28 @@ const PrimryImage = () => {
           )}
         </div>
 
+        <button
+          onClick={() => setimage("")}
+          style={{
+            display: `${!image ? "none" : "flex"}`,
+          }}
+          className=" deleteimage "
+        >
+          <IoClose></IoClose>
+        </button>
+
         <div
           style={{
-            height: `${image ? "40px" : "100%"}`,
+            display: `${image ? "none" : "block"}`,
           }}
           className=" uploadContainer hoverEfftOnImage  "
         >
           <div className=" mergeUploadIcon ">
-            <label
-              style={{ fontSize: `${image ? "32px" : "48px"}` }}
-              htmlFor="primaryimg"
-              className=" uploadicon "
-            >
+            <label htmlFor={`otherimage_${imageCounter}`} className=" uploadicon ">
               <IoCamera></IoCamera>
             </label>
             <input
-              id="primaryimg"
+              id={`otherimage_${imageCounter}`}
               onChange={handleImageChange}
               className=" uploadImg "
               type="file"
@@ -60,4 +75,4 @@ const PrimryImage = () => {
   );
 };
 
-export default PrimryImage;
+export default AnotherImage;

@@ -45,7 +45,7 @@ const Tiptap = () => {
       Image,
       Highlight
     ],
-    content: "<p>Hello World!</p>",
+    content: "<p>Please type the description...</p>",
     editorProps: {
       attributes: {
         class:
@@ -69,8 +69,9 @@ const Tiptap = () => {
 
 
   return (
-    <>
-      <div className="flex flex-col">
+    <div  className="mb-6 inpurFill " >
+      <label htmlFor="description" className=" text-gray-300 dark:text-[#091C46] w-full ">Description</label>
+      <div id='description' className="flex flex-col pt-1  ">
           <div className="flex space-x-2 mb-0 border border-b-0 overflow-hidden justify-between ">
             <div className="relative">
               <button className={`p-2`}>
@@ -155,9 +156,9 @@ const Tiptap = () => {
             <PiTextAlignJustifyBold className=' text-lg ' ></PiTextAlignJustifyBold>
             </button>
           </div>
-          <EditorContent editor={editor} className="  p-2 defualtcss no-srcolber " />
+          <EditorContent editor={editor} className="  p-2 defualtcss no-srcolber  " />
       </div>
-    </>
+    </div>
   );
 };
 

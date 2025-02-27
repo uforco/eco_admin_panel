@@ -1,8 +1,12 @@
 import React from 'react';
+import BercodeGenared from '../formItems/BercodeGenared';
 
 const PriceSection = () => {
     return (
         <>
+        <div className=" w-full " >
+          <BercodeGenared></BercodeGenared>
+        </div>
             <div className=" mb-6 flex justify-between items-center gap-4 " >
                 <div className=" inpurFill w-full ">
                     <label htmlFor="qty" className=" text-gray-300 dark:text-[#091C46] w-full ">qty</label>

@@ -1,6 +1,6 @@
 .defualtcss {
   /* Global Styles */
-@apply border h-52 overflow-hidden overflow-y-scroll ;
+@apply border h-52 overflow-hidden overflow-y-scroll bg-gray-400/50 text-gray-900 dark:bg-[#071739]   dark:text-gray-400 rounded-md resize-none p-2 focus:outline-none  ;
  /* Default font size for headers */
 h1 {
     font-size: 2em; /* Default size for h1 */
