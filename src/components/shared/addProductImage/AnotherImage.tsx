@@ -3,17 +3,20 @@ import Image from "next/image";
 import React from "react";
 import { IoCamera, IoClose } from "react-icons/io5";
 import HydrationComponent from "@/components/HydrationComponent";
-
+import { useAppDispatch, useAppSelector } from "@/redux/app/hooks";
+import { deleteImage, imageIncludes, productSliceData } from "@/redux/features/addProduct/addProductSlice";
 
 interface Props {
-    imageCounter: number | string;
+  imageCounter: number;
 }
 
 const AnotherImage = (props: Props) => {
+  
+  const { imageCounter } = props;
+  
+  const data = useAppSelector(productSliceData);
+  const dispatch = useAppDispatch()
 
-    const {imageCounter} = props;
-
-  const [image, setimage] = React.useState<string>("");
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -21,7 +24,7 @@ const AnotherImage = (props: Props) => {
       const reader = new FileReader();
       reader.readAsDataURL(file); // Convert file to base64
       reader.onloadend = () => {
-        setimage(reader.result as string);
+        dispatch(imageIncludes({position: imageCounter, image: reader.result as string}))
       };
     }
   };
@@ -30,10 +33,10 @@ const AnotherImage = (props: Props) => {
     <HydrationComponent>
       <div className=" anotherImages  ">
         <div className="imagecontainer">
-          {image && (
+          {data?.product?.image[imageCounter] && (
             <Image
               className=" w-full h-full "
-              src={image}
+              src={data?.product?.image[imageCounter]}
               width={200}
               height={200}
               alt={""}
@@ -42,9 +45,13 @@ const AnotherImage = (props: Props) => {
         </div>
 
         <button
-          onClick={() => setimage("")}
+        type="button"
+          onClick={() => {
+            // setimage([imageCounter, ''])
+            dispatch(deleteImage({ position: imageCounter, image: '' }))
+          }}
           style={{
-            display: `${!image ? "none" : "flex"}`,
+            display: `${!data?.product?.image[imageCounter] ? "none" : "flex"}`,
           }}
           className=" deleteimage "
         >
@@ -53,12 +60,15 @@ const AnotherImage = (props: Props) => {
 
         <div
           style={{
-            display: `${image ? "none" : "block"}`,
+            display: `${data?.product?.image[imageCounter] ? "none" : "block"}`,
           }}
           className=" uploadContainer hoverEfftOnImage  "
         >
           <div className=" mergeUploadIcon ">
-            <label htmlFor={`otherimage_${imageCounter}`} className=" uploadicon ">
+            <label
+              htmlFor={`otherimage_${imageCounter}`}
+              className=" uploadicon "
+            >
               <IoCamera></IoCamera>
             </label>
             <input

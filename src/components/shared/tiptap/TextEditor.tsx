@@ -26,8 +26,17 @@ import {
   PiTextAlignRightBold,
   PiTextAlignJustifyBold,
 } from "react-icons/pi";
+import { useAppDispatch, useAppSelector } from "@/redux/app/hooks";
+import { setContent, productSliceData } from "@/redux/features/addProduct/addProductSlice";
+
 
 const Tiptap = () => {
+
+  const data = useAppSelector(productSliceData);
+        const dispatch = useAppDispatch();
+
+
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -44,7 +53,7 @@ const Tiptap = () => {
       Image,
       Highlight,
     ],
-    content: "<p>Please type the description...</p>",
+    content: data?.product?.description || 'Please type description...',
     editorProps: {
       attributes: {
         class:
@@ -52,7 +61,14 @@ const Tiptap = () => {
       },
     },
     immediatelyRender: false,
+    onUpdate: ({ editor }) => {
+      dispatch(setContent(editor.getHTML()))
+    }
   });
+
+  // const upDateData = (e: string) => {
+  //   dispatch(setContent(editor.getHTML()))
+  // }
 
   if (!editor) {
     return null;
@@ -69,6 +85,7 @@ const Tiptap = () => {
       <div id="description" className="flex flex-col pt-1  ">
         <div className="flex space-x-2 mb-0 border border-b-0 overflow-hidden justify-between overflow-x-scroll">
           <button
+          type="button"
             onClick={() => {
               editor.chain().focus().toggleHeading({ level: 1 }).run();
             }}
@@ -79,6 +96,7 @@ const Tiptap = () => {
             H1
           </button>
           <button
+          type="button"
             onClick={() => {
               editor.chain().focus().toggleHeading({ level: 2 }).run();
             }}
@@ -89,6 +107,7 @@ const Tiptap = () => {
             H2
           </button>
           <button
+          type="button"
             onClick={() => {
               editor.chain().focus().toggleHeading({ level: 3 }).run();
             }}
@@ -100,12 +119,14 @@ const Tiptap = () => {
           </button>
 
           <button
+          type="button"
             onClick={() => editor.chain().focus().toggleBold().run()}
             className={`p-2 ${editor.isActive("bold") ? "bg-gray-300/40" : ""}`}
           >
             <FaBold />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().toggleItalic().run()}
             className={`p-2 ${
               editor.isActive("italic") ? "bg-gray-300/40" : ""
@@ -114,6 +135,7 @@ const Tiptap = () => {
             <FaItalic />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().toggleUnderline().run()}
             className={`p-2 ${
               editor.isActive("underline") ? "bg-gray-300/40" : ""
@@ -122,6 +144,7 @@ const Tiptap = () => {
             <FaUnderline />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             className={`p-2 ${
               editor.isActive("bulletList") ? "bg-gray-300/40" : ""
@@ -130,6 +153,7 @@ const Tiptap = () => {
             <FaListUl />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
             className={`p-2 ${
               editor.isActive("orderedList") ? "bg-gray-300/40" : ""
@@ -138,6 +162,7 @@ const Tiptap = () => {
             <FaListOl />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().setTextAlign("left").run()}
             className={`p-2 ${
               editor.isActive({ textAlign: "left" }) ? "bg-gray-300/40" : ""
@@ -146,6 +171,7 @@ const Tiptap = () => {
             <PiTextAlignLeftBold className=" text-lg " />
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().setTextAlign("center").run()}
             className={`p-2 ${
               editor.isActive({ textAlign: "center" }) ? "bg-gray-300/40" : ""
@@ -154,6 +180,7 @@ const Tiptap = () => {
             <PiTextAlignCenterBold className=" text-lg "></PiTextAlignCenterBold>
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().setTextAlign("right").run()}
             className={`p-2 ${
               editor.isActive({ textAlign: "right" }) ? "bg-gray-300/40" : ""
@@ -162,6 +189,7 @@ const Tiptap = () => {
             <PiTextAlignRightBold className=" text-lg "></PiTextAlignRightBold>
           </button>
           <button
+          type="button"
             onClick={() => editor.chain().focus().setTextAlign("justify").run()}
             className={`p-2 ${
               editor.isActive({ textAlign: "justify" }) ? "bg-gray-300/40" : ""

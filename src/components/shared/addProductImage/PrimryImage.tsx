@@ -5,10 +5,14 @@ import React from "react";
 import { IoCamera } from "react-icons/io5";
 import HydrationComponent from "@/components/HydrationComponent";
 import'./imagecss.scss'
+import { useAppDispatch, useAppSelector } from "@/redux/app/hooks";
+import { imageIncludes, productSliceData } from "@/redux/features/addProduct/addProductSlice";
 
 const PrimryImage = () => {
 
-  const [image, setimage] = React.useState<string>("");
+  const data = useAppSelector(productSliceData);
+  const dispatch = useAppDispatch()
+
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -16,20 +20,22 @@ const PrimryImage = () => {
       const reader = new FileReader();
       reader.readAsDataURL(file); // Convert file to base64
       reader.onloadend = () => {
-        setimage(reader.result as string);
+        dispatch(imageIncludes({position: 0, image: reader.result as string}))
       };
     }
   };
+
+  
 
 
   return (
     <HydrationComponent>
       <div className=" primaryImage  ">
         <div className="imagecontainer">
-          {image && (
+          {data?.product?.image[0] && (
             <Image
               className=" w-full h-full "
-              src={image}
+              src={data?.product?.image[0]}
               width={200}
               height={200}
               alt={""}
@@ -39,13 +45,13 @@ const PrimryImage = () => {
 
         <div
           style={{
-            height: `${image ? "40px" : "100%"}`,
+            height: `${data?.product?.image[0] ? "40px" : "100%"}`,
           }}
           className=" uploadContainer hoverEfftOnImage  "
         >
           <div className=" mergeUploadIcon ">
             <label
-              style={{ fontSize: `${image ? "32px" : "48px"}` }}
+              style={{ fontSize: `${data?.product?.image[0] ? "32px" : "48px"}` }}
               htmlFor="primaryimg"
               className=" uploadicon "
             >

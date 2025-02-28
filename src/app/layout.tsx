@@ -30,7 +30,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ReduxProvider>
       <html lang="en">
         <body>
           <ReduxProvider>
@@ -40,6 +39,5 @@ export default function RootLayout({
           </ReduxProvider>
         </body>
       </html>
-    </ReduxProvider>
   );
 }

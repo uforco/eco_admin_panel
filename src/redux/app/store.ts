@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import addProductSlice from './../features/addProduct/addProductSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import addProductSlice from '../features/addProduct/addProductSlice';
 // ...
 
 export const store = configureStore({
   reducer: {
-    addProduct: addProductSlice
+    addproduct: addProductSlice
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat()
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat()
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
