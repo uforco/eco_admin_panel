@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import SideManu from "@/components/adminPanelNavBer/sideber/SideManu";
-import TopMemuBer from "../../components/adminPanelNavBer/topber/TopMemuBer";
+import SideManu from "@/components/NavBer/sideber/SideManu";
+import TopMemuBer from "@/components/NavBer/topber/TopMemuBer"
 import DrawerManu from "./DrawerManu";
 // import DrawerManu from './DrawerManu';
 

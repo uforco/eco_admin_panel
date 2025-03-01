@@ -6,16 +6,40 @@ import AdditionalInfo from "./AdditionalInfo/AdditionalInfo";
 import PriceSection from "./priceSection/PriceSection";
 import { useAppDispatch, useAppSelector } from "@/redux/app/hooks";
 
-
 import { IoClose } from "react-icons/io5";
 import toast from "react-hot-toast";
-import { increment, resetState } from "@/redux/features/addProduct/addProductSlice";
+import { resetState } from "@/redux/features/addProduct/addProductSlice";
+import { addProductValidetion } from "@/utils/addProductValidetion";
+
+// Error toast 
+const FromErrorMes = (masg: string): void => {
+  toast.custom(
+    (t) => (
+      <div
+        className={`${
+          t.visible ? "animate-enter" : "animate-leave"
+        } w-96 bg-white text-black SaveProductEorror `}
+      >
+        <button onClick={() => toast.dismiss(t.id)}>
+          <IoClose></IoClose>
+        </button>
+        <div className=" toast-container ">{masg}</div>
+      </div>
+    ),
+    { position: "top-right" }
+  );
+};
+
+
+
+// Main file
 
 const ProductContainer = () => {
+
   const data = useAppSelector((state) => state.addproduct);
   const dispatch = useAppDispatch();
 
-  const [swit, setSwit] = React.useState("AdditionalInfo");
+  const [swit, setSwit] = React.useState("PrimaryInfo");
   const typeContaine = ["PrimaryInfo", "PriceSection", "AdditionalInfo"];
   let containe: React.ReactNode = <PrimaryInfo></PrimaryInfo>;
   if (swit === typeContaine[0]) {
@@ -28,74 +52,21 @@ const ProductContainer = () => {
     containe = <AdditionalInfo></AdditionalInfo>;
   }
 
-  const formHeandelar = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const formHeandelar = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-
-    // addProduct_Validation(e)
-
-    toast.custom(
-      (t) => (
-        <div
-          className={`${
-            t.visible ? "animate-enter" : "animate-leave"
-          } w-96 bg-white text-black SaveProductEorror `}
-        >
-          <button onClick={() => toast.dismiss(t.id)}>
-            <IoClose></IoClose>
-          </button>
-          <div className=" toast-container ">sdfhdfrh</div>
-        </div>
-      ),
-      { position: "top-right" }
-    );
-
-
-    dispatch(resetState())
-
+    toast.dismiss()
     
+    if(addProductValidetion(data.product, FromErrorMes)) return
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({...data.product})
+    })
+    const resdata = await res.json()
+    console.log(resdata)
+    dispatch(resetState());
   };
-  
-
-  const getdata2 = () => {
-    dispatch(increment({
-      product_bercode: '34634657',
-      product_name: 'name of product with test',
-      brand_name: 'brand name of',
-      brand_logo: 'logo',
-      image: ['iamge1', 'image2', 'image3'],
-      qty: 2,
-      scale: 'kg',
-      price: 200.66,
-      discount: 10,
-      type: 'food type',
-      category: 'vagetables',
-      short_Description: 'short_dis_cripct',
-      description: 'long discript'
-    }))
-    
-  }
-  const getdata = () => {
-    console.log(data)
-    
-  }
-
-  // const getdata = () => {
-  //   dispatch(increment({
-  //     product_bercode: '34634657',
-  //     product_name: 'name of product with test',
-  //     brand_name: 'brand name of',
-  //     brand_logo: 'logo',
-  //     image: ['iamge1', 'image2', 'image3'],
-  //     qty: 2,
-  //     scale: 'kg',
-  //     price: 200.66,
-  //     discount: 10,
-  //     type: 'food type',
-  //     category: 'vagetables',
-  //     short_Description: 'short_dis_cripct',
-  //     description: 'long discript'
-  //   }))
-  // };
 
   return (
     <div className=" h-full addFromStyle ">
@@ -127,12 +98,6 @@ const ProductContainer = () => {
       </div>
 
       <div className=" h-full overflow-y-scroll no-srcolber containeScrollber w-full ">
-        <button onClick={getdata} className=" p-2 ">
-          get data
-        </button>
-        <button onClick={getdata2} className=" p-2 ">
-          del img
-        </button>
         <div className=" pt-5 overflow-hidden p-4 w-full  ">
           <form
             className=" w-full h-full productFrom "

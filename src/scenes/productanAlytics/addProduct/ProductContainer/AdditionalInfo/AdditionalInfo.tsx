@@ -13,7 +13,7 @@ const AdditionalInfo = () => {
         <>
             <div className="mb-6 inpurFill ">
                 <label htmlFor="short_Description" className=" text-gray-300 dark:text-[#091C46] w-full ">Short Description</label>
-                <input value={data?.product?.short_Description} onChange={(e) =>dispatch(inputDataProduct({ short_Description: e?.target?.value }))} type="text" id="short_Description" className=" w-full bg-gray-400 "></input>
+                <input value={data?.product?.short_Description} placeholder='Type a Short Description ...' onChange={(e) =>dispatch(inputDataProduct({ short_Description: e?.target?.value }))} type="text" id="short_Description" className=" w-full bg-gray-400 "></input>
             </div>
             <div>
             <TextEditor></TextEditor>

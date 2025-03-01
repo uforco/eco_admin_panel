@@ -7,7 +7,7 @@ import { FaPlus } from "react-icons/fa";
 import "./addproduct.scss";
 
 const AddProduct = () => {
-  const [open, setOpen] = React.useState<boolean>(true);
+  const [open, setOpen] = React.useState<boolean>(false);
 
   return (
     <>

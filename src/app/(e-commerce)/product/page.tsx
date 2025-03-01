@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <div className=" h-full " >
       <div className=" w-full flex items-center justify-end mb-6 " >
-      <AddProduct></AddProduct>
+        <AddProduct></AddProduct>
       </div>
       <div className=" flex gap-6 w-full flex-col lg:flex-row  overflow-hidden ">
         <div className=" w-full xl:w-8/12 h-auto  ">

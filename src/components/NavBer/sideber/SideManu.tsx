@@ -7,6 +7,7 @@ import {
   HiShoppingBag,
   HiTable,
   HiUser,
+  HiViewGridAdd 
 } from "react-icons/hi";
 import Sidebar from "./Sideber";
 
@@ -15,11 +16,11 @@ const SideManu = ({className: classname}:{className?: string}) => {
 
   return (
       <Sidebar className={`bg-slate-100/50 dark:bg-[#182a50] ${classname}`}>
-        <Sidebar.Item Icon={HiChartPie} to={""}>
+        <Sidebar.Item Icon={HiViewGridAdd} to={"/"}>
           Deashbord
         </Sidebar.Item>
         <Sidebar.Collapse Icon={HiShoppingBag} label="E-commerce">
-          <Sidebar.Item to={""}>Products</Sidebar.Item>
+          <Sidebar.Item to={"/product"}>Products</Sidebar.Item>
           <Sidebar.Item to={""}>Sales</Sidebar.Item>
           <Sidebar.Item to={""}>Refunds</Sidebar.Item>
           <Sidebar.Item to={""}>Shipping</Sidebar.Item>

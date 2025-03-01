@@ -1,14 +1,5 @@
 
-// type imageType = {
-//   img1: string;
-//   img2: string;
-//   img3: string;
-//   img4: string;
-// }
-
-export interface InitialState {
-  value: number;
-  product: {
+export type productType = {
     bercode: string;
     product_name: string;
     brand_name: string;
@@ -22,5 +13,9 @@ export interface InitialState {
     category: string;
     short_Description: string;
     description: string;
-  };
+  }
+
+export interface InitialState {
+  value: number;
+  product: productType;
 }

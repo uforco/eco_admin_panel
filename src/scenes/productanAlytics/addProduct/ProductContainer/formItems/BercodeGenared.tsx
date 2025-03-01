@@ -45,6 +45,7 @@ const BercodeGenared = () => {
           maxLength={12}
           type="number"
           id="Ber-Code"
+          placeholder="Type a Ber-Code Number or Generat ..."
           className=" w-full bg-gray-400 "
           onChange={(e) =>
             dispatch(inputDataProduct({ bercode: e?.target?.value }))

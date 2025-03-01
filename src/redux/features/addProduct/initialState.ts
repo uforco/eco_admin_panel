@@ -5,13 +5,13 @@ const initialState: InitialState = {
   product: {
     bercode: "",
     product_name: "",
-    brand_name: "",
+    brand_name: "None-Brand",
     brand_logo: "", //base64
     image: ['', '', '', ''], //base64
     qty: "",
     scale: "",
     price: "",
-    discount: "",
+    discount: 0,
     type: "",
     category: "",
     short_Description: "",

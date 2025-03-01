@@ -53,7 +53,7 @@ const Tiptap = () => {
       Image,
       Highlight,
     ],
-    content: data?.product?.description || 'Please type description...',
+    content: data?.product?.description,
     editorProps: {
       attributes: {
         class:
