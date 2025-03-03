@@ -8,7 +8,7 @@ export type productType = {
     qty: number | string;
     scale: string;
     price: number | string;
-    discount: number | string;
+    discount?: number | string;
     type: string;
     category: string;
     short_Description: string;

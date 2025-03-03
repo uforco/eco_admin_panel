@@ -5,9 +5,14 @@ import ProductContainer from "./ProductContainer/ProductContainer";
 import { IoClose } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 import "./addproduct.scss";
+// import { useAppDispatch } from "@/redux/app/hooks";
 
 const AddProduct = () => {
   const [open, setOpen] = React.useState<boolean>(false);
+// const dispatch = useAppDispatch();
+  const offSideber = () => {
+    setOpen(false)
+  }
 
   return (
     <>
@@ -41,7 +46,7 @@ const AddProduct = () => {
                 <p> Add a New Product</p>
                 <div className=" flex justify-end p-2 text-xl ">
                   <button
-                    onClick={() => setOpen((priv) => !priv)}
+                    onClick={() => {setOpen((priv) => !priv)}}
                     className=" text-2xl "
                   >
                     <IoClose />
@@ -50,7 +55,7 @@ const AddProduct = () => {
               </div>
 
               {/* <div className=" h-full overflow-y-scroll no-srcolber containeScrollber" > */}
-              <ProductContainer></ProductContainer>
+              <ProductContainer offSideber={offSideber} ></ProductContainer>
               {/* </div> */}
             </Drawer.Description>
           </Drawer.Content>

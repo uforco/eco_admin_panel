@@ -34,7 +34,7 @@ const FromErrorMes = (masg: string): void => {
 
 // Main file
 
-const ProductContainer = () => {
+const ProductContainer = ({offSideber}:{offSideber:()=>void}) => {
 
   const data = useAppSelector((state) => state.addproduct);
   const dispatch = useAppDispatch();
@@ -58,15 +58,20 @@ const ProductContainer = () => {
     toast.dismiss()
     
     if(addProductValidetion(data.product, FromErrorMes)) return
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({...data.product})
+    }).then((data)=> data.json()).then((data) => {
+      if(data){
+        dispatch(resetState())
+        return data
+      }
     })
-    const resdata = await res.json()
-    console.log(resdata)
-    dispatch(resetState());
+    if(res) offSideber()
   };
+
 
   return (
     <div className=" h-full addFromStyle ">

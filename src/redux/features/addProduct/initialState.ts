@@ -11,7 +11,7 @@ const initialState: InitialState = {
     qty: "",
     scale: "",
     price: "",
-    discount: 0,
+    discount: "",
     type: "",
     category: "",
     short_Description: "",

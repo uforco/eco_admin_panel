@@ -1,0 +1,17 @@
+.stock_product{
+    .filterCard{
+        @apply flex flex-col gap-1 ;
+        .labeltitle{
+            @apply dark:text-gray-300 mb-1 text-[#091C46] w-full uppercase font-semibold text-xs;
+        }
+        select{
+            @apply dark:bg-[#294671] bg-slate-200 ;
+        }
+    }
+    .TableRow{
+        @apply bg-transparent cursor-pointer
+    }
+    .rowOddNumber{
+        @apply dark:bg-slate-900/30 bg-slate-200
+    }
+}

@@ -24,9 +24,9 @@ const PriceSection = () => {
                     <label htmlFor="scale" className=" text-gray-300 dark:text-[#091C46] w-full ">Scale</label>
                     <select value={data?.product?.scale} onChange={ (e)=> dispatch(inputDataProduct({ scale: e?.target?.value })) } style={{width: '100px', padding: '10px' }} id="scale" className="seletedsection ">
                         <option disabled selected value="">Select</option>
-                        <option value="K">Kg</option>
-                        <option value="L">Liter</option>
-                        <option value="P">Pice</option>
+                        <option value="KG">Kg</option>
+                        <option value="LITER">Liter</option>
+                        <option value="PIS">Pis</option>
                     </select>
                 </div>
             </div>
