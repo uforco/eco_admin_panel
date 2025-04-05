@@ -6,7 +6,10 @@ import ProductAddbyMonth from "@/scenes/productanAlytics/productAddbyMonth/Produ
 import ProductSalesAnalytics from "@/scenes/productanAlytics/productSalesAnalytics/ProductSalesAnalytics";
 import AddProduct from '@/scenes/productanAlytics/addProduct/AddProduct';
 
-const Page = () => {
+const Page = async () => {
+
+  const TotalProductCount = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product/count-Month-product-chart`).then((res)=> res.json())
+
   return (
     <div className=" h-full " >
       <div className=" w-full flex items-center justify-end mb-6 " >
@@ -15,7 +18,7 @@ const Page = () => {
       <div className=" flex gap-6 w-full flex-col lg:flex-row  overflow-hidden ">
         <div className=" w-full xl:w-8/12 h-auto  ">
           <div className=" flex gap-6 flex-col md:flex-row w-full ">
-            <TotalProduct></TotalProduct>
+            <TotalProduct TotalProductCountMonth={TotalProductCount?.totalchart || []} ></TotalProduct>
             <TotalSales></TotalSales>
           </div>
           <div className=" w-full  mt-6  ">
@@ -24,7 +27,7 @@ const Page = () => {
         </div>
         <div className=" w-full   xl:w-4/12  h-full lg:h-auto hidden xl:flex flex-col gap-6 ">
           <div className=" w-full  ">
-            <ProductAddbyMonth></ProductAddbyMonth>
+            <ProductAddbyMonth TotalProductCountMonth={TotalProductCount?.totalchart || []} ></ProductAddbyMonth>
           </div>
           <div className=" w-full h-[300px] ">
             <ProductSalesAnalytics></ProductSalesAnalytics>

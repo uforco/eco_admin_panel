@@ -6,9 +6,15 @@ import { MdShoppingCart } from "react-icons/md";
 import { IoStar } from "react-icons/io5";
 // import CircelCharts from "@/scenes/rootdashbord/TopSectionDetiles/CircelCharts/CircelCharts";
 import Main_section from '@/scenes/rootdashbord/revenue_report_and_Order_Overview/Main_section';
+import { fetchingGet } from "@/utils/fetchingData";
 
 
-export default function Home() {
+
+export default async function Home() {
+
+  const res = await fetchingGet('/dashborad/total-top-card')
+
+
   return (
     <div className=" h-full w-full ">
       {/* <RootDashborad></RootDashborad> */}
@@ -27,7 +33,7 @@ export default function Home() {
             <PrifixCard
               title={"Total Products"}
               TitleIcon={GiShoppingBag}
-              total={"277"}
+              total={res.LatsMonthOfProduct}
               monthProfit={"29"}
               className={"totalproductsscss"}
             ></PrifixCard>

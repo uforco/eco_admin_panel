@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./productAddbyMonth.scss";
 
 import { Bar, BarChart, Cell, LabelList, XAxis, YAxis } from "recharts";
@@ -10,15 +10,8 @@ import {
   ChartTooltip,
   // ChartTooltipContent,
 } from "@/components/ui/chart";
-const chartData = [
-  { month: "January", desktop: 18 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 305 },
-  { month: "April", desktop: 237 },
-  { month: "May", desktop: 237 },
-  { month: "Jun", desktop: 73 },
-  { month: "July", desktop: 73 },
-];
+import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
+
 
 const chartConfig = {
   desktop: {
@@ -27,11 +20,51 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 // swtBgColor
-const ProductAddbyMonth = () => {
+
+
+const map = new Map([
+  ["January",  { month: "January", Product: 0 }],
+  ["February",  { month: "February", Product: 0 }],
+  ["March",  { month: "March", Product: 0 }],
+  ["April",  { month: "April", Product: 0 }],
+  ["May",  { month: "May", Product: 0 }],
+  ["June",  { month: "June", Product: 0 }],
+  ["July",  { month: "July", Product: 0 }],
+  ["August",  { month: "August", Product: 0 }],
+  ["September",  { month: "September", Product: 0 }],
+  ["October",  { month: "October", Product: 0 }],
+  ["November",  { month: "November", Product: 0 }],
+  ["December",  { month: "December", Product: 0 }],
+]);
+
+interface Props {
+  TotalProductCountMonth: { month: string, Product: number }[];
+}
+
+
+// main component
+const ProductAddbyMonth = (props: Props) => {
+const {TotalProductCountMonth} = props;
+TotalProductCountMonth.forEach((obj) => {
+  map.set(obj.month, obj);
+});
+
+const [swiMonth, setSwiMonth] = useState<[number, number]>([0,6])
+
+const chartData = Array.from(map.values()).slice(swiMonth[0], swiMonth[1])
+
   return (
     <div className=" productAddbyMonth  boxBgColor  " >
-      <div className=" titleName " >
+      <div className=" titleName flex justify-between  " >
       Product Add  by Month
+        <div className=" flex  gap-3 text-2xl " >
+          <button onClick={()=> setSwiMonth([0, 6])} className=" monthSwit " >
+            <IoMdArrowDropleftCircle></IoMdArrowDropleftCircle>
+          </button>
+          <button onClick={()=> setSwiMonth([6, 12])} className=" monthSwit " >
+          <IoMdArrowDroprightCircle></IoMdArrowDroprightCircle>
+          </button>
+        </div>
       </div>
       <div className=" h-full " >
         <ChartContainer config={chartConfig} className=" h-full " >
@@ -44,7 +77,7 @@ const ProductAddbyMonth = () => {
               right: 20,
             }}
           >
-            <XAxis type="number" dataKey="desktop" hide />
+            <XAxis type="number" dataKey="Product" hide />
             <YAxis
               dataKey="month"
               type="category"
@@ -74,7 +107,7 @@ const ProductAddbyMonth = () => {
                 return null;
               }}
             />
-            <Bar dataKey="desktop" radius={[0, 30, 30, 0]} barSize={16}>
+            <Bar dataKey="Product" radius={[0, 30, 30, 0]} barSize={16}>
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -83,7 +116,7 @@ const ProductAddbyMonth = () => {
               ))}
 
               <LabelList
-                dataKey="desktop"
+                dataKey="Product"
                 position="right"
                 offset={8}
                 className="fill-foreground"

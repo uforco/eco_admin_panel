@@ -52,8 +52,8 @@ const TotalSales = (props: Props) => {
       </div>
 
 
-      <div className="  ">
-        <ChartContainer config={chartConfig} className=" ChartContainer ">
+      <div className=" ChartContainerWiper ">
+        <ChartContainer config={chartConfig} className=" ChartContainer  ">
           <AreaChart
             accessibilityLayer
             data={chartData}

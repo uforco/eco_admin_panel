@@ -18,25 +18,39 @@ const chartConfig = {
 
 
 interface Props {
-    data?: {name: string}[];
+  TotalProductCountMonth: { month: string, Product: number }[];
 }
 
+
+
+const map = new Map([
+    ["January",  { month: "January", Product: 1 }],
+    ["February",  { month: "February", Product: 0 }],
+    ["March",  { month: "March", Product: 0 }],
+    ["April",  { month: "April", Product: 0 }],
+    ["May",  { month: "May", Product: 0 }],
+    ["June",  { month: "June", Product: 0 }],
+    ["July",  { month: "July", Product: 0 }],
+    ["August",  { month: "August", Product: 0 }],
+    ["September",  { month: "September", Product: 0 }],
+    ["October",  { month: "October", Product: 0 }],
+    ["November",  { month: "November", Product: 0 }],
+    ["December",  { month: "December", Product: 0 }],
+]);
+
+
 const TotalProduct = (props: Props) => {
+    const {TotalProductCountMonth} = props;
+    TotalProductCountMonth.forEach((obj) => {
+      map.set(obj.month, obj);
+    });
 
-    const {} = props;
+    const chartData = Array.from(map.values())
+    
+  const totalb = chartData.reduce((acc, crr) =>  acc+ crr.Product, 0)
 
+  console.log()
 
-
-    const chartData = [
-      { month: "January", Product: 26 },
-      { month: "February", Product: 30 },
-      { month: "March", Product: 23 },
-      { month: "April", Product: 18 },
-      { month: "May", Product: 28 },
-      { month: "June", Product: 39 }
-    ];
-
-    //   const colorCode2 =  colorCode || "#ff3916"
 
   return (
     <div className="  totalCardLineChartsSection  ">
@@ -45,14 +59,14 @@ const TotalProduct = (props: Props) => {
             <p className=" icon productIcon " ><HiGiftTop></HiGiftTop></p>
             <div>
                 <p className=" totalTitle " >Total Product</p>
-                <p className=" totalData " >5,00,874</p>
+                <p className=" totalData " >{totalb.toLocaleString('en-IN')}</p>
             </div>
         </div>
-        <div className=" rightside " >+1400 New Added</div>
+        <div className=" rightside " >+{chartData[new Date().getMonth()].Product} New Added</div>
       </div>
 
 
-      <div className=" w-full  ">
+      <div className=" w-full  ChartContainerWiper  ">
         <ChartContainer config={chartConfig} className=" ChartContainer ">
           <AreaChart
             accessibilityLayer

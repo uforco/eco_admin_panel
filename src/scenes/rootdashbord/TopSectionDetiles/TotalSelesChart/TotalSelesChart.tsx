@@ -30,6 +30,9 @@ const chartConfig = {
 
 
 export default function TotalSelesChartComponent() {
+
+
+
   return (
     <HydrationComponent>
       <div className="  min-w-56 w-full h-full overflow-hidden flex flex-col justify-between py-1 totalSalesLineBer  ">

@@ -26,7 +26,9 @@
       @apply text-xs text-green-600;
     }
   }
-
+  .ChartContainerWiper{
+    @apply -mt-[25px]
+  }
   .ChartContainer {
     @apply flex w-full h-[130px];
   }
