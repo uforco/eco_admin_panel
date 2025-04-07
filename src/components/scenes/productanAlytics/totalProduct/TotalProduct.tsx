@@ -49,7 +49,6 @@ const TotalProduct = (props: Props) => {
     
   const totalb = chartData.reduce((acc, crr) =>  acc+ crr.Product, 0)
 
-  console.log()
 
 
   return (

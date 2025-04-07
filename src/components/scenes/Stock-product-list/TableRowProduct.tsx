@@ -23,7 +23,7 @@ const TableRowProduct = ({
         <div className=" flex items-center gap-2 ">
           <div className={` w-12 h-12 rounded-lg overflow-hidden border bg-white `}>
             <Image
-              src={item?.image[0]}
+              src={item?.coverimage}
               alt={item?.product_name}
               width={80}
               height={80}

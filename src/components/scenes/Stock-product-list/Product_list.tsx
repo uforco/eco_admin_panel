@@ -17,7 +17,8 @@ const Product_list = () => {
   const { data, error, isLoading, isSuccess } =
     useGetStockProductListApiQuery(undefined);
 
-  // console.log(data)
+//console.log(data, "data");
+
 
   const [filters, setFilters] = React.useState({
     showby: '12', 
@@ -28,7 +29,7 @@ const Product_list = () => {
 
   let containe;
 
-  console.log(data, "data");
+  // console.log(data, "data");
 
   if (isLoading) {
     containe = (

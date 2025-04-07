@@ -6,7 +6,7 @@ export interface StockProductType {
   category: string;
   brand_name: string;
   short_Description: string;
-  image: string[];
+  coverimage: string;
   price: string;
   discount: string;
   stock_Status: number;
@@ -15,14 +15,14 @@ export interface StockProductType {
 
 const stockProductApi = createApi({
   reducerPath: "stockProductApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `http://localhost:4000/admin/product` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${process.env.NEXT_PUBLIC_SERVER_URL}` }),
   endpoints: (builder) => ({
     getStockProductListApi: builder.query({
-      query: () => "/stock",
+      query: () => "/product/stock",
     }),
     updateStock: builder.mutation({
       query: ({ id, stockStatus, stock }) => ({
-        url: `/update-stock/${id}`,
+        url: `/product/update-stock/${id}`,
         method: "PUT",
         body: { id, stockStatus, stock },
       }),
