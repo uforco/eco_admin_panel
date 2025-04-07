@@ -7,9 +7,7 @@ import ProductSalesAnalytics from "@/components/scenes/productanAlytics/productS
 import AddProduct from '@/components/scenes/productanAlytics/addProduct/AddProduct';
 
 const Page = async () => {
-
   const TotalProductCount = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product/count-Month-product-chart`).then((res)=> res.json())
-
   return (
     <div className=" h-full " >
       <div className=" w-full flex items-center justify-end mb-6 " >
