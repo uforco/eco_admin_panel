@@ -1,4 +1,4 @@
-<h1 align="center"><img src="/public/ecodeashbord.png" alt="ecobazar" width="100%"> </h1>
+<h1 align="center"><img src="/public/Thumbnail.png" alt="ecobazar" width="100%"> </h1>
 
 # Eco-Dashboard & Backend Framework 🌿
 
