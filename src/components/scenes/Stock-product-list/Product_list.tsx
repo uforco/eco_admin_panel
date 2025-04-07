@@ -26,7 +26,9 @@ const Product_list = () => {
     brandBy: ''       
   })
 
-  let containe: React.ReactNode = <div></div>;
+  let containe;
+
+  console.log(data, "data");
 
   if (isLoading) {
     containe = (
@@ -50,22 +52,27 @@ const Product_list = () => {
     );
   }
   if (isSuccess && data.length) {
-    containe = data
-      .slice(0, Number(filters.showby))
-      .filter((product:StockProductType) => {
-        const ratingbyCondition = filters?.ratingby? product.rating === Number(filters?.ratingby) : true;
-
-        const categoryCondition = filters.category? product.category === filters.category : true;
-
-        const brandByCondition = filters.brandBy !== undefined ? product.brand_name > filters.brandBy : true;
-
-
-        return ratingbyCondition && categoryCondition && brandByCondition
-      })
-      .map((item: StockProductType, inx: number) => (
+    containe = data.map((item: StockProductType, inx: number) => (
         <TableRowProduct key={item.id} inx={inx} item={item}></TableRowProduct>
-      ))
+        // <div key={item.id} > {item.id} </div>
+      ));
   }
+
+
+
+  // .slice(0, Number(filters.showby)).filter((product:StockProductType) => {
+  //   const ratingbyCondition = filters?.ratingby? product.rating === Number(filters?.ratingby) : true;
+  //   const categoryCondition = filters.category? product.category === filters.category : true;
+  //   const brandByCondition = filters.brandBy !== undefined ? product.brand_name > filters.brandBy : true;
+  //   return ratingbyCondition && categoryCondition && brandByCondition
+  // })
+  
+
+
+
+
+
+
 
   return (
     <div >
@@ -127,35 +134,30 @@ const Product_list = () => {
                     <option  value="snacks">Snacks</option>
                 </select>
             </div>
-            
-
-
 
         </div>
-        <div style={{ minHeight: "525px" }} >
-
-        
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-4 capitalize ">UID</TableHead>
-            <TableHead
-              style={{ width: "300px" }}
-              className=" capitalize overflow-hidden "
-            >
-              Product
-            </TableHead>
-            <TableHead className=" capitalize ">Category</TableHead>
-            <TableHead className=" capitalize ">Brand</TableHead>
-            <TableHead className=" capitalize ">Price</TableHead>
-            <TableHead className=" capitalize ">Stock</TableHead>
-            <TableHead className=" capitalize ">Rating</TableHead>
-            <TableHead className=" capitalize ">Action</TableHead>
-          </TableRow>
-        </TableHeader>
-
-        <TableBody>{containe}</TableBody>
-      </Table>
+      <div style={{ minHeight: "525px" }} >
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-4 capitalize ">UID</TableHead>
+              <TableHead
+                style={{ width: "300px" }}
+                className=" capitalize overflow-hidden "
+              >
+                Product
+              </TableHead>
+              <TableHead className=" capitalize ">Category</TableHead>
+              <TableHead className=" capitalize ">Brand</TableHead>
+              <TableHead className=" capitalize ">Price</TableHead>
+              <TableHead className=" capitalize ">Stock</TableHead>
+              <TableHead className=" capitalize ">Rating</TableHead>
+              <TableHead className=" capitalize ">Action</TableHead>
+            </TableRow>
+          </TableHeader>
+          {/* {containe} */}
+          <TableBody>{containe}</TableBody>
+        </Table>
       </div>
     </div>
   );

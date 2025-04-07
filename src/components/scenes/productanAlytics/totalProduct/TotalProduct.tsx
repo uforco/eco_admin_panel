@@ -24,7 +24,7 @@ interface Props {
 
 
 const map = new Map([
-    ["January",  { month: "January", Product: 1 }],
+    ["January",  { month: "January", Product: 0 }],
     ["February",  { month: "February", Product: 0 }],
     ["March",  { month: "March", Product: 0 }],
     ["April",  { month: "April", Product: 0 }],

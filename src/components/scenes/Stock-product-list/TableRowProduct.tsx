@@ -1,3 +1,5 @@
+'use client';
+import React from "react";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { StockProductType } from "@/redux/features/stock_product_list/stockProductList";
 import Image from "next/image";

@@ -1,11 +1,11 @@
-import TotalSelesChartComponent from "@/scenes/rootdashbord/TopSectionDetiles/TotalSelesChart/TotalSelesChart";
-import PrifixCard from "@/scenes/rootdashbord/TopSectionDetiles/PrefixCardCharts/PrifixCard";
+import TotalSelesChartComponent from "@/components/scenes/rootdashbord/TopSectionDetiles/TotalSelesChart/TotalSelesChart";
+import PrifixCard from "@/components/scenes/rootdashbord/TopSectionDetiles/PrefixCardCharts/PrifixCard";
 import { FaUserCircle } from "react-icons/fa";
 import { GiShoppingBag } from "react-icons/gi";
 import { MdShoppingCart } from "react-icons/md";
 import { IoStar } from "react-icons/io5";
 // import CircelCharts from "@/scenes/rootdashbord/TopSectionDetiles/CircelCharts/CircelCharts";
-import Main_section from '@/scenes/rootdashbord/revenue_report_and_Order_Overview/Main_section';
+import Main_section from '@/components/scenes/rootdashbord/revenue_report_and_Order_Overview/Main_section';
 import { fetchingGet } from "@/utils/fetchingData";
 
 

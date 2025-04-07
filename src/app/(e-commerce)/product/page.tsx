@@ -1,10 +1,10 @@
 import React from "react";
-import TotalProduct from "@/scenes/productanAlytics/totalProduct/TotalProduct";
-import TotalSales from "@/scenes/productanAlytics/totalProduct/TotalSales";
-import TopSellingProducts from "@/scenes/productanAlytics/top_Selling_Products/TopSellingProducts";
-import ProductAddbyMonth from "@/scenes/productanAlytics/productAddbyMonth/ProductAddbyMonth";
-import ProductSalesAnalytics from "@/scenes/productanAlytics/productSalesAnalytics/ProductSalesAnalytics";
-import AddProduct from '@/scenes/productanAlytics/addProduct/AddProduct';
+import TotalProduct from "@/components/scenes/productanAlytics/totalProduct/TotalProduct";
+import TotalSales from "@/components/scenes/productanAlytics/totalProduct/TotalSales";
+import TopSellingProducts from "@/components/scenes/productanAlytics/top_Selling_Products/TopSellingProducts";
+import ProductAddbyMonth from "@/components/scenes/productanAlytics/productAddbyMonth/ProductAddbyMonth";
+import ProductSalesAnalytics from "@/components/scenes/productanAlytics/productSalesAnalytics/ProductSalesAnalytics";
+import AddProduct from '@/components/scenes/productanAlytics/addProduct/AddProduct';
 
 const Page = async () => {
 

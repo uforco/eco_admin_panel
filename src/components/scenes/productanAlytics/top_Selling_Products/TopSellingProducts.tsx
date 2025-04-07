@@ -2,7 +2,7 @@ import React from "react";
 import "./topSellingProducts.scss";
 import Link from "next/link";
 import Image from "next/image"
-import shows from '../../../../public/shows.png'
+import shows from '../../../../../public/shows.png'
 
 import {
   Table,

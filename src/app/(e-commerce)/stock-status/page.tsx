@@ -1,7 +1,7 @@
 
 import React from "react";
 import './stock_product.scss'
-import Product_list from '@/scenes/Stock-product-list/Product_list';
+import Product_list from '@/components/scenes/Stock-product-list/Product_list';
 
 const page = () => {
   return (
