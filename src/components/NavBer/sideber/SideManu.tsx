@@ -18,7 +18,7 @@ const SideManu = ({ className: classname }: { className?: string }) => {
   const auth = useSession()
 
   return (
-    <div className=" w-full md:h-[calc(100%-80px)] xl:h-[calc(100%-10px)] flex flex-col justify-between ">
+    <div className=" w-full md:h-[calc(100%-80px)] xl:h-[calc(100%-50px)] 2xl:xl:h-[calc(100%-10px)] flex flex-col justify-between ">
       <Sidebar className={`bg-slate-100/50 dark:bg-[#182a50] ${classname}`}>
         <Sidebar.Item Icon={HiViewGridAdd} to={"/"}>
           Deashbord
