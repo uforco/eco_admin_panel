@@ -48,7 +48,7 @@ export const config: NextAuthOptions = {
           id: "1",
           name: "MD Sharif",
           email: email,
-          image: "https://lh3.googleusercontent.com/a/ACg8ocL3no-bSSwEwKeqLNVWNhzKqVLTCG0l5dFf8saeGs5_09doxgg=s96-c",
+          image: "https://sharifdev.vercel.app/_next/static/media/hero.72e62a24.png",
           role: "admin",
         }
       },

@@ -1,3 +1,5 @@
+<h1 align="center"><img src="/public/ecodeashbord.png" alt="ecobazar" width="100%"> </h1>
+
 # Eco-Dashboard & Backend Framework 🌿
 
 ## Live Site - Fab 2024 🌐

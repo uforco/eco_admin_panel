@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { AppStore, store } from './app/store';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { Provider } from 'react-redux';
+import { SessionProvider } from 'next-auth/react';
 
 interface Props {
     children: React.ReactNode;
@@ -21,7 +22,7 @@ function ReduxProvider({children}: Props) {
         }
       }, []);
 
-    return <Provider store={storeRef.current}>{children}</Provider>;
+    return <SessionProvider >  <Provider store={storeRef.current}>{children}</Provider> </SessionProvider> ;
 }
 
 export default ReduxProvider
